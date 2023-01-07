@@ -12,7 +12,6 @@ type PropsType = {
 export const ButtonUniv = (props: PropsType) => {
     const onClickHandler = () => {
         props.callBack()
-
     }
 
     return (
