@@ -13,7 +13,6 @@ export const ButtonUniv = (props: PropsType) => {
     const onClickHandler = () => {
         props.callBack()
     }
-
     return (
         <Button variant={props.filter === props.name ? "outlined" : "contained"} color={props.color} onClick={onClickHandler}>{props.name}</Button>
     )
