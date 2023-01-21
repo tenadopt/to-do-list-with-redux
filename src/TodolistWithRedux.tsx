@@ -15,8 +15,6 @@ export type TodolistWithReduxPropsType = {
     todolist: TodolistsType
 }
 
-
-
 export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) => {
     const {id, title, filter} = todolist
 
