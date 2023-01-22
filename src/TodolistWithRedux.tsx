@@ -21,6 +21,8 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     let tasks = useSelector<AppRootStateType, Array<TaskType>>(state => state.tasks[id])
     console.log("tasks", tasks)
 
+
+
     const dispatch = useDispatch()
 
     const addTaskHandler = (title: string) => {
@@ -35,6 +37,8 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
         dispatch(changeTodolistTitleAC(id, title))
     }
 
+
+
     let tasksForToDolist = tasks
 
     if (filter === 'Active') {
@@ -44,8 +48,6 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     if (filter === 'Completed') {
         tasksForToDolist = tasks.filter(el => el.isDone)
     }
-
-
 
     const onAllClickHandler = () => dispatch(changeTodolistFilterAC(id, "All"))
     const onActiveClickHandler = () => dispatch(changeTodolistFilterAC(id, "Active"))
