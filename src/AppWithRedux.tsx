@@ -14,8 +14,6 @@ export type TodolistsType = {
     filter: FilterButtonType
 }
 
-
-
 export type TaskType = {
     id: string
     title: string
@@ -63,6 +61,5 @@ function AppWithRedux() {
         </div>
     )
 }
-
 
 export default AppWithRedux;
