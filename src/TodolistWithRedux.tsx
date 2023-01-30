@@ -21,8 +21,6 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     let tasks = useSelector<AppRootStateType, Array<TaskType>>(state => state.tasks[id])
     console.log("tasks", tasks)
 
-
-
     const dispatch = useDispatch()
 
     const addTaskHandler = (title: string) => {
@@ -36,8 +34,6 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     const changeTodolistTitle = (title: string) => {
         dispatch(changeTodolistTitleAC(id, title))
     }
-
-
 
     let tasksForToDolist = tasks
 
