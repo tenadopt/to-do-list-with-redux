@@ -35,6 +35,7 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
         dispatch(changeTodolistTitleAC(id, title))
     }
 
+
     let tasksForToDolist = tasks
 
     if (filter === 'Active') {
@@ -45,9 +46,11 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
         tasksForToDolist = tasks.filter(el => el.isDone)
     }
 
+
     const onAllClickHandler = () => dispatch(changeTodolistFilterAC(id, "All"))
     const onActiveClickHandler = () => dispatch(changeTodolistFilterAC(id, "Active"))
     const onCompletedClickHandler = () => dispatch(changeTodolistFilterAC(id, "Completed"))
+
 
     return <div>
         <h3><EditableSpan editableTitle={title} callBack={changeTodolistTitle}/>
