@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC} from 'react';
+import React, {ChangeEvent, FC, useCallback} from 'react';
 import {TaskType, TodolistsType} from "./AppWithRedux";
 import IconButton from "@mui/material/IconButton/IconButton";
 import {Delete} from "@mui/icons-material";
@@ -23,17 +23,20 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
 
     const dispatch = useDispatch()
 
-    const addTaskHandler = (title: string) => {
-        dispatch(addTaskAC(id, title))
-    }
+    const addTaskHandler = useCallback((title: string) => {
+            dispatch(addTaskAC(id, title))},
+        [],
+    )
 
-    const removeTodolist = () => {
-        dispatch(removeTodolistAC(id))
-    }
+    const removeTodolist = useCallback((id: string) => {
+            dispatch(removeTodolistAC(id))},
+        [],
+    )
 
-    const changeTodolistTitle = (title: string) => {
-        dispatch(changeTodolistTitleAC(id, title))
-    }
+    const changeTodolistTitle = useCallback((title: string) => {
+        dispatch(changeTodolistTitleAC(id, title))},
+        [],
+    )
 
     let tasksForToDolist = tasks
 
@@ -44,9 +47,6 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     if (filter === 'Completed') {
         tasksForToDolist = tasks.filter(el => el.isDone)
     }
-
-
-
 
     const onAllClickHandler = () => dispatch(changeTodolistFilterAC(id, "All"))
     const onActiveClickHandler = () => dispatch(changeTodolistFilterAC(id, "Active"))
