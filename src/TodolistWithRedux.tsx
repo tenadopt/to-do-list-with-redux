@@ -52,6 +52,8 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
     const onActiveClickHandler = () => dispatch(changeTodolistFilterAC(id, "Active"))
     const onCompletedClickHandler = () => dispatch(changeTodolistFilterAC(id, "Completed"))
 
+
+
     return <div>
         <h3><EditableSpan editableTitle={title} callBack={changeTodolistTitle}/>
             <IconButton onClick={removeTodolist}>
