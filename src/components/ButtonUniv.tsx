@@ -8,9 +8,6 @@ type PropsType = {
     callBack: () => void
     color: "success" | "secondary" | "inherit"
 }
-
-
-
 export const ButtonUniv = (props: PropsType) => {
     const onClickHandler = () => {
         props.callBack()
