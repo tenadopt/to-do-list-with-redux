@@ -54,7 +54,8 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
 
     return <div>
         <h3><EditableSpan editableTitle={title} callBack={changeTodolistTitle}/>
-            <IconButton onClick={removeTodolist}>
+
+            <IconButton onClick={()=>removeTodolist(id)}>
                 <Delete/>
             </IconButton>
         </h3>
