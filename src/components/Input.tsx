@@ -1,12 +1,14 @@
 import Button from "@mui/material/Button";
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, memo, useState} from "react";
 import TextField from "@mui/material/TextField";
 
 type InputPropsType = {
     callBack: (newTitle: string) => void
 }
 
-export const Input = (props: InputPropsType) => {
+export const Input = memo((props: InputPropsType) => {
+
+    console.log('Input')
     const [title, setTitle] = useState('')
     const [error, setError] = useState<boolean>(false)
 
@@ -21,7 +23,7 @@ export const Input = (props: InputPropsType) => {
         }
     }
 
-    const addTask  = () => {
+    const addTask = () => {
         let newTitle = title.trim();
         if (newTitle !== '') {
             props.callBack(newTitle)
@@ -43,8 +45,8 @@ export const Input = (props: InputPropsType) => {
                 label={error ? "Title is required" : "Outlined"}
                 variant="outlined"
             />
-            <Button style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}} variant="contained" onClick={addTask}>+</Button>
-            {/*{error && <div className={styles.errorMessage}>{error}</div>}*/}
+            <Button style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}
+                    variant="contained" onClick={addTask}>+</Button>
         </div>
     );
-};
+});

@@ -31,7 +31,7 @@ function AppWithRedux() {
     const dispatch = useDispatch()
 
     const addToDoList = (newTitle: string) => {
-        dispatch(addToDoListsAC(newTitle))
+         dispatch(addToDoListsAC(newTitle))
     }
 
     return (

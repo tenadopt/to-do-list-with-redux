@@ -25,17 +25,17 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
 
     const addTaskHandler = useCallback((title: string) => {
             dispatch(addTaskAC(id, title))},
-        [],
+        [id, title],
     )
 
     const removeTodolist = useCallback((id: string) => {
             dispatch(removeTodolistAC(id))},
-        [],
+        [dispatch], //prevented warning entered dispatch in dependeses
     )
 
     const changeTodolistTitle = useCallback((title: string) => {
         dispatch(changeTodolistTitleAC(id, title))},
-        [],
+        [dispatch],
     )
 
     let tasksForToDolist = tasks
