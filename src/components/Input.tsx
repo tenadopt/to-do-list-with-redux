@@ -7,8 +7,6 @@ type InputPropsType = {
 }
 
 export const Input = memo((props: InputPropsType) => {
-
-    console.log('Input')
     const [title, setTitle] = useState('')
     const [error, setError] = useState<boolean>(false)
 

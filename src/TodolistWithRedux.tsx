@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, useCallback} from 'react';
+import React, {ChangeEvent, FC, memo, useCallback} from 'react';
 import {TaskType, TodolistsType} from "./AppWithRedux";
 import IconButton from "@mui/material/IconButton/IconButton";
 import {Delete} from "@mui/icons-material";
@@ -15,7 +15,10 @@ export type TodolistWithReduxPropsType = {
     todolist: TodolistsType
 }
 
-export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) => {
+export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = memo(({todolist}) => {
+
+    console.log('ITodolistWithReduxnput')
+
     const {id, title, filter} = todolist
 
     let tasks = useSelector<AppRootStateType, Array<TaskType>>(state => state.tasks[id])
@@ -88,7 +91,7 @@ export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = ({todolist}) =>
             <ButtonUniv filter={filter} name="Completed" callBack={onCompletedClickHandler} color={"inherit"}/>
         </div>
     </div>
-}
+})
 
 // const mapTasks = props.tasks.map(el => {
 //
