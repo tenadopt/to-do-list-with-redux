@@ -35,18 +35,14 @@ function AppWithRedux() {
     }
 
     return (
-
         <div className="App">
-
             <ButtonAppBar/>
-
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
                     <Input callBack={addToDoList}/>
                 </Grid>
                 <Grid container spacing={3}>
                     {todolists.map(el => {
-
                         return (<Grid item>
                                 <Paper style={{padding: '10px'}}>
                                     <TodolistWithRedux
