@@ -33,6 +33,8 @@ function AppWithRedux() {
     const addToDoList = (newTitle: string) => {
          dispatch(addToDoListsAC(newTitle))
     }
+
+
     return (
         <div className="App">
             <ButtonAppBar/>
@@ -56,5 +58,7 @@ function AppWithRedux() {
         </div>
     )
 }
+
+
 
 export default AppWithRedux;
