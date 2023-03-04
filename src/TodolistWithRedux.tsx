@@ -14,6 +14,10 @@ import {Input} from "./components/Input";
 export type TodolistWithReduxPropsType = {
     todolist: TodolistsType
 }
+
+
+
+
 export const TodolistWithRedux: FC<TodolistWithReduxPropsType> = memo(({todolist}) => {
 
     console.log('ITodolistWithReduxnput')
